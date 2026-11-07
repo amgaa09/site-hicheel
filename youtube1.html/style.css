@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    background: #0f0f0f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    background: red;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.search {
+    display: flex;
+    width: 45%;
+}
+
+.search input {
+    width: 100%;
+    padding: 12px;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 20px 0 0 20px;
+    color: white;
+}
+
+.search button {
+    width: 65px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    font-size: 22px;
+}
+
+.profile {
+    font-size: 22px;
+}
+
+/* Sidebar */
+aside {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    padding: 20px 12px;
+}
+
+aside a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+aside a:hover {
+    background: #333;
+}
+
+aside h3 {
+    margin: 20px 12px;
+}
+
+aside hr {
+    border: 1px solid #333;
+    margin: 15px 0;
+}
+
+/* Main */
+main {
+    margin-left: 220px;
+    padding: 90px 25px 30px;
+}
+
+/* Categories */
+nav {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+nav button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+nav button:first-child {
+    background: white;
+    color: black;
+}
+
+/* Video Grid */
+.videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 18px;
+}
+
+.video {
+    cursor: pointer;
+}
+
+.thumbnail {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+}
+
+.thumbnail span {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    background: black;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Thumbnail colors */
+.one {
+    background: linear-gradient(135deg, #064e49, #101b38);
+}
+
+.two {
+    background: linear-gradient(135deg, #663b68, #bf5a38);
+}
+
+.three {
+    background: linear-gradient(135deg, #173b63, #27a4a0);
+}
+
+.four {
+    background: linear-gradient(135deg, #3b4322, #a16b30);
+}
+
+.five {
+    background: linear-gradient(135deg, #222, #555);
+}
+
+.six {
+    background: linear-gradient(135deg, #173d45, #245a8a);
+}
+
+/* Video information */
+.video h3 {
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.video p {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .videos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    aside {
+        width: 70px;
+    }
+
+    aside a {
+        font-size: 0;
+    }
+
+    main {
+        margin-left: 70px;
+    }
+
+    .videos {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        overflow-x: auto;
+    }
+
+    .search {
+        width: 40%;
+    }
+}
